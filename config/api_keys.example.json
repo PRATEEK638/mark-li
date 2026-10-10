@@ -1,0 +1,54 @@
+{
+    "_comment": "Copy to api_keys.json and fill in. api_keys.json is gitignored - never commit real keys. Any provider is optional except gemini: the Live voice session only exists there. A value may be a single string or a list; a list is a pool that rotates automatically when one key hits a free-tier rate limit.",
+    "os_system": "windows",
+    "assistant_name": "AURA",
+    "user_name": "",
+    "camera_index": 0,
+    "_gemini": "Text, vision and tool calls. Get keys at https://aistudio.google.com/apikey",
+    "gemini_api_key": "",
+    "gemini_api_keys": [
+        "",
+        ""
+    ],
+    "gemini_model": "YOUR_API_KEY",
+    "_gemini_voice": "Reserved for the Live voice session. Keep this a DIFFERENT key from the text pool - voice is the only subsystem with no fallback, so it must not share a quota with text work.",
+    "gemini_voice_api_key": "",
+    "_aliases": "Remaps the model names hardcoded in the action modules. Google's floating -latest aliases can sit at 503 for hours while a pinned sibling answers instantly; this is the one place to redirect them. Leave empty to use the call sites verbatim.",
+    "gemini_model_aliases": {
+        "gemini-flash-latest": "YOUR_API_KEY"
+    },
+    "_openrouter": "Free-tier fallback. https://openrouter.ai/keys",
+    "openrouter_api_keys": [
+        "",
+        ""
+    ],
+    "openrouter_model": "YOUR_API_KEY",
+    "_nvidia": "NVIDIA NIM free tier. https://build.nvidia.com",
+    "nvidia_api_key": "",
+    "nvidia_model": "YOUR_API_KEY",
+    "_sarvam": "Indian-language models, prepaid. Ordered last so credits are not spent on work a free route can do. https://dashboard.sarvam.ai",
+    "sarvam_api_keys": [
+        ""
+    ],
+    "sarvam_model": "YOUR_API_KEY",
+    "_order": "Text tier failover order. Remove a provider to take it out of the chain.",
+    "cloud_fallback_order": [
+        "gemini",
+        "openrouter",
+        "nvidia",
+        "sarvam"
+    ],
+    "_local": "Optional local LLM (Ollama / LM Studio). Not required.",
+    "llm_provider": "ollama",
+    "llm_url": "YOUR_API_KEY",
+    "llm_model": "llama3.2",
+    "_listener": "How easily you can talk over the assistant: 'headphones' (easiest - no speaker echo), 'balanced' (default, laptop speakers), 'noisy' (loud speakers or a busy room).",
+    "listener_sensitivity": "balanced",
+    "_file_roots": "Extra directories file operations may touch, beyond your home folder. System folders and the AURA install are always denied.",
+    "file_safe_roots": [],
+    "barge_in": false,
+    "_barge_in": "Let yourself talk over the assistant. Off by default: it depends on a correct speaker-echo estimate, and a wrong one makes the assistant interrupt itself. Safe with headphones.",
+    "spotify_client_id": "",
+    "spotify_client_secret": "",
+    "_spotify": "Optional and free: create an app at https://developer.spotify.com/dashboard. Without these, 'play <song>' can only open Spotify search results; with them it plays the exact track. Uses the client-credentials flow - search only, no account access."
+}
